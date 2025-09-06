@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Infosys",
+    "purchasePrice": 1500,
+    "quantity": 10,
+    "exchange": "NSE",
+    "sector": "Technology",
+    "symbol": "INFY.NS"
+  },
+  {
+    "name": "HDFC Bank",
+    "purchasePrice": 1600,
+    "quantity": 5,
+    "exchange": "NSE",
+    "sector": "Financials",
+    "symbol": "HDFCBANK.NS"
+  }
+]

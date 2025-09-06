@@ -1,40 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# 📊 Portfolio Dashboard
 
-## Getting Started
+A **Portfolio Dashboard MVP** built with **Next.js, TypeScript, TailwindCSS, Node.js, and Recharts**.  
+This project was developed as part of an interview assignment to demonstrate **full-stack engineering, clean code, and UI/UX polish**.
 
-First, run the development server:
+---
 
+## 🚀 Features
+
+- **Portfolio Table** – Displays stock details with live CMP, P/E ratio, and latest earnings  
+- **Sector Summary** – Groups by sector with Investment, Present Value, Gain/Loss, and Portfolio %  
+- **Charts** –  
+  - Pie Chart → Sector allocation  
+  - Bar Chart → Gain/Loss by stock  
+- **Live Data** – CMP, P/E, and earnings fetched from **Yahoo Finance** (via `yahoo-finance2` library)  
+- **Auto Refresh** – Data refreshes every 15 seconds  
+- **Error Handling** – Loading indicators, fallbacks (`N/A`), and error banners for failed API calls  
+- **Responsive UI** – Modern, card-based design with TailwindCSS (works on desktop & mobile)  
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend**: [Next.js](https://nextjs.org/) (React + TypeScript)  
+- **Backend**: Node.js (via Next.js API routes)  
+- **UI Framework**: TailwindCSS  
+- **Charts**: Recharts  
+- **Data Source**: Yahoo Finance (`yahoo-finance2` npm package)  
+
+---
+
+## 📂 Project Structure
+
+portfolio-dashboard/
+┣ pages/
+┃ ┣ index.tsx # Main dashboard (fetches live data, renders components)
+┃ ┣ api/
+┃ ┃ ┗ price/[symbol].ts # API route → fetch CMP, P/E ratio, Earnings from Yahoo
+┣ components/
+┃ ┣ PortfolioTable.tsx # Stock-level table
+┃ ┣ SectorSummary.tsx # Sector-wise aggregation
+┃ ┣ SectorPieChart.tsx # Sector allocation pie chart
+┃ ┗ GainLossBarChart.tsx # Stock gain/loss bar chart
+┣ data/
+┃ ┗ stocks.json # Sample static portfolio (used as baseline)
+┣ styles/ # Tailwind setup
+┗ README.md
+
+
+---
+
+## ⚙️ Getting Started
+
+### 1. Clone the Repository
 ```bash
+git clone https://github.com/<your-username>/portfolio-dashboard.git
+cd portfolio-dashboard
+
+2. Install Dependencies
+npm install
+
+3. Run Development Server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Now open http://localhost:3000
+ 🚀
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+🌐 Deployment (Vercel)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+Push your repo to GitHub.
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Go to Vercel
+, click New Project, and import your repo.
 
-## Learn More
+Use defaults (Next.js optimized out of the box).
 
-To learn more about Next.js, take a look at the following resources:
+Deploy → you’ll get a live link like:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+https://portfolio-dashboard.vercel.app/
